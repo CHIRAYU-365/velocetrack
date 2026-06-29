@@ -1,0 +1,6 @@
+{
+  "name": "VeloceTrack Portal",
+  "description": "VeloceTrack security gateway and workspace dashboard simulation featuring high-density intern milestone tracking, real-time posture checking, and EOD offline compilation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

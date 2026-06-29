@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+  --font-serif: "Lora", "Georgia", serif;
+
+  /* Custom Immersive UI Palette */
+  --color-bg-base: #030712;
+  --color-surf: rgba(15, 23, 42, 0.75);
+  --color-surf-low: rgba(9, 15, 29, 0.8);
+  --color-surf-container: rgba(15, 23, 42, 0.85);
+  --color-surf-high: rgba(30, 41, 59, 0.6);
+  --color-surf-highest: rgba(51, 65, 85, 0.4);
+  --color-border-brand: rgba(51, 65, 85, 0.55);
+  
+  --color-primary-brand: #3b82f6;
+  --color-primary-light: #93c5fd;
+  --color-success-brand: #10b981;
+  --color-secondary-brand: #0ea5e9;
+  --color-tertiary-brand: #f59e0b;
+  
+  --color-text-primary: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-dark: #030712;
+}
+
+/* Atmosphere backgrounds & futuristic lines */
+.atmosphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, #1e1b4b 0%, transparent 50%), radial-gradient(circle at 20% 80%, #0c4a6e 0%, transparent 60%);
+  z-index: -1;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.glow-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.45;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Custom styles for professional scrollbars in dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Base custom font mappings for utility */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(320px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scan {
+  animation: scan 4s ease-in-out infinite;
+}
